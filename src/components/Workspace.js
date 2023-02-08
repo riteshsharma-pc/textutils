@@ -2,13 +2,16 @@ import { useState } from "react";
 
 export default function Workspace(props) {
     const uppercaseFunc = () => {
-        setData(data.toUpperCase())
+        setData(data.toUpperCase());
+        props.showAlert('success', 'Converted to Upper case')
     }
     const lowercaseFunc = () => {
         setData(data.toLowerCase())
+        props.showAlert('success', 'Converted to Lower case')
     }
     const clearTextFunc = () => {
         setData('')
+        props.showAlert('success', 'Text cleared')
     }
     const [data, setData] = useState('')
     const handleChange = (event) => {
@@ -16,13 +19,16 @@ export default function Workspace(props) {
     }
     const copyText = () => {
         navigator.clipboard.writeText(data.toString());
+        props.showAlert('success', 'Text copied')
     }
     const removeFrontBackSpaces = () => {
         setData(data.trim());
+        props.showAlert('success', 'Front and Back spaces are removed')
     }
     const removeExtraSpaces = () => {
         var newData = data.split(/[ ]+/);
         setData(newData.join(" "))
+        props.showAlert('success', 'Extra Spaces are removed')
     }
     return (
         <>
