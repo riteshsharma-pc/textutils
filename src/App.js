@@ -4,18 +4,19 @@ import { useState } from 'react'
 import './App.css'
 function App() {
   const [mode, setMode] = useState('light')
-  const [theme, setTheme] = useState()
   const [filter, setFilter] = useState()
   const switchDarkMode = () => {
     if (mode === 'light') {
       setMode('dark')
-      themeMode(mode)
       invertStyle(mode)
+      document.body.style.backgroundColor = 'rgb(8 5 28)'
+      document.body.style.color = 'white'
     }
     else {
       setMode('light')
-      themeMode(mode)
       invertStyle(mode)
+      document.body.style.backgroundColor = 'white'
+      document.body.style.color = 'black'
     }
   }
   const invertStyle = () => {
@@ -26,25 +27,10 @@ function App() {
       setFilter('nofilter')
     }
   }
-  const themeMode = () => {
-    if (mode === 'dark') {
-      setTheme({
-        color: 'black',
-        backgroundColor: 'white'
-      })
-    }
-    else {
-      setTheme({
-        color: 'white',
-        backgroundColor: 'rgb(8 5 28)'
-      })
-    }
-  }
-
   return (
     <>
       <Navbar title="TextUtils" switchDarkMode={switchDarkMode} mode={mode} filter={filter} />
-      <Workspace theme={theme} />
+      <Workspace />
     </>
   );
 }

@@ -26,7 +26,6 @@ export default function Workspace(props) {
     }
     return (
         <>
-            <div style={props.theme}>
                 <div className="form py-3">
                     <label htmlFor="dataofuser" className="my-1">Enter Your Data Here</label>
                     <textarea className="form-control my-3" id="databox" value={data} onChange={handleChange} placeholder="Enter Text here" rows="8"></textarea>
@@ -44,7 +43,6 @@ export default function Workspace(props) {
                     <h2>Preview</h2>
                     <p>{data}</p>
                 </div>
-            </div>
         </>
     );
 };
