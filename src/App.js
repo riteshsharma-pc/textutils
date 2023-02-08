@@ -1,39 +1,39 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Workspace from "./components/Workspace";
+import { useState } from 'react'
 function App() {
-  const [themeMode, setthemeMode] = useState({
-    color: 'black',
-    backgroundColor: 'white'
-  })
-  const [themeBtnText, setThemeBtnText] = useState('Enable Dark Mode')
-
-  const theme = () => {
-    if (themeMode.color === 'black') {
-      setthemeMode({
-        color: 'white',
-        backgroundColor: 'black'
-      })
-      setThemeBtnText('Enable Light Mode')
-
+  const [mode, setMode] = useState('light')
+  const [theme, setTheme] = useState()
+  const switchDarkMode = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      themeMode(mode)
     }
     else {
-      setthemeMode({
+      setMode('light')
+      themeMode(mode)
+    }
+  }
+  const themeMode = () => {
+    if (mode === 'dark') {
+      setTheme({
         color: 'black',
         backgroundColor: 'white'
       })
-      setThemeBtnText('Enable Dark Mode')
+    }
+    else {
+      setTheme({
+        color: 'white',
+        backgroundColor: 'rgb(8 5 28)'
+      })
     }
   }
 
   return (
-    <><div style={themeMode}>
-      <Navbar title="TextUtils"/>
-      <button className="btn btn-primary" onClick={theme}>{themeBtnText}</button>
-      <div className="container">
-        <Workspace />
-      </div>
-      </div></>
+    <>
+      <Navbar title="TextUtils" switchDarkMode={switchDarkMode} mode={mode} />
+      <Workspace theme={theme} />
+    </>
   );
 }
 export default App;
