@@ -26,23 +26,25 @@ export default function Workspace(props) {
     }
     return (
         <>
+            <div className="container">
                 <div className="form py-3">
                     <label htmlFor="dataofuser" className="my-1">Enter Your Data Here</label>
-                    <textarea className="form-control my-3" id="databox" value={data} onChange={handleChange} placeholder="Enter Text here" rows="8"></textarea>
-                    <button className="btn btn-primary mx-1" onClick={uppercaseFunc}>Change to Uppercase</button>
-                    <button className="btn btn-primary mx-1" onClick={lowercaseFunc}>Change to Lowercase</button>
-                    <button className="btn btn-primary mx-1" onClick={clearTextFunc}>Clear Text</button>
-                    <button className="btn btn-primary mx-1" onClick={copyText}>Copy Text</button>
-                    <button className="btn btn-primary mx-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
-                    <button className="btn btn-primary mx-1" onClick={removeFrontBackSpaces}>Remove Starting and Ending Extra Spaces</button>
+                    <textarea className={`form-control my-3 ${props.textarea}`} id="databox" value={data} onChange={handleChange} placeholder="Enter Text here" rows="8"></textarea>
+                    <button className="btn btn-primary m-1" onClick={uppercaseFunc}>Change to Uppercase</button>
+                    <button className="btn btn-primary m-1" onClick={lowercaseFunc}>Change to Lowercase</button>
+                    <button className="btn btn-primary m-1" onClick={clearTextFunc}>Clear Text</button>
+                    <button className="btn btn-primary m-1" onClick={copyText}>Copy Text</button>
+                    <button className="btn btn-primary m-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+                    <button className="btn btn-primary m-1" onClick={removeFrontBackSpaces}>Remove Starting and Ending Extra Spaces</button>
                 </div>
                 <div>
                     <h1>Text Summary</h1>
                     <p>{data.split(' ').length} words and {data.length} characters</p>
                     <p>{0.008 * data.split(' ').length} minutes read</p>
                     <h2>Preview</h2>
-                    <p>{data}</p>
+                    <p>{data.length>0 ? data : 'Enter text in above text area to preview'}</p>
                 </div>
+            </div>
         </>
     );
 };

@@ -5,3 +5,12 @@
 .nofilter {
     filter: invert(0);
 }
+
+.textarea-dark, .textarea-dark:hover, .textarea-dark:not(:hover) , .textarea-dark::placeholder, .textarea-dark:active{
+    background-color: rgb(16, 21, 45);
+    color: white;
+}
+.textarea-light{
+    background-color: white;
+    color: black;
+}
