@@ -18,11 +18,11 @@ function App() {
       invertStyle(mode)
     }
   }
-  const invertStyle = () =>{
-    if(mode==='light'){
+  const invertStyle = () => {
+    if (mode === 'light') {
       setFilter('filter')
     }
-    else{
+    else {
       setFilter('nofilter')
     }
   }

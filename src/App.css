@@ -1,6 +1,7 @@
-.filter{
+.filter {
     filter: invert(1);
 }
-.nofilter{
+
+.nofilter {
     filter: invert(0);
 }
