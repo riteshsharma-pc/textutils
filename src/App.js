@@ -26,6 +26,7 @@ function App() {
       document.body.style.backgroundColor = 'rgb(8 5 28)'
       document.body.style.color = 'white'
       showAlert('success','Dark mode is enabled')
+      document.title = 'TextUtils- Dark Mode'
     }
     else {
       setMode('light')
@@ -34,6 +35,7 @@ function App() {
       document.body.style.backgroundColor = 'white'
       document.body.style.color = 'black'
       showAlert('success', 'Dark mode is disabled')
+      document.title = 'TextUtils- Light Mode'
     }
   }
   const darkTextArea = () => {
