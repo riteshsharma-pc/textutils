@@ -1,8 +1,12 @@
+import React from "react";
 import Navbar from "./components/Navbar";
 import Workspace from "./components/Workspace";
+import About from "./components/About";
 import { useState } from 'react'
 import './App.css'
 import Alert from "./components/Alert";
+import { Route, BrowserRouter,  Routes } from 'react-router-dom';
+
 function App() {
   const [mode, setMode] = useState('light')
   const [filter, setFilter] = useState()
@@ -56,9 +60,14 @@ function App() {
   }
   return (
     <>
+    <BrowserRouter>
       <Navbar title="TextUtils" switchDarkMode={switchDarkMode} mode={mode} filter={filter} />
       <Alert alert={alert} />
-      <Workspace textarea={textarea} showAlert={showAlert} />
+      <Routes>
+      <Route path="/" element={<Workspace textarea={textarea} showAlert={showAlert} />} />
+      <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }

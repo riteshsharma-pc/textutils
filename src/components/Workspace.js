@@ -30,6 +30,7 @@ export default function Workspace(props) {
         setData(newData.join(" "))
         props.showAlert('success', 'Extra Spaces are removed')
     }
+    
     return (
         <>
             <div className="container">
@@ -45,7 +46,7 @@ export default function Workspace(props) {
                 </div>
                 <div>
                     <h1>Text Summary</h1>
-                    <p>{data.split(' ').length} words and {data.length} characters</p>
+                    <p>{data.length===0 ? '0' : data.split(/[ ]+/).length} words and {data.length} characters</p>
                     <p>{0.008 * data.split(' ').length} minutes read</p>
                     <h2>Preview</h2>
                     <p>{data.length>0 ? data : 'Enter text in above text area to preview'}</p>
