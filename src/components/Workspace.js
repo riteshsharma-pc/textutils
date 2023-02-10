@@ -46,7 +46,11 @@ export default function Workspace(props) {
                 </div>
                 <div>
                     <h1>Text Summary</h1>
-                    <p>{data.split(' ').filter((element)=>{return element.length!==0}).length} words and {data.length} characters {"(including spaces)"} and {data.split(' ').length-1} white spaces </p>
+                    <p>{data.split(' ').filter((element)=>{return element.length!==0}).length} words</p>
+                    <p>{data.length} characters {"(including spaces)"}</p>
+                    <p>{data.split(' ').length-1} white spaces</p>
+                    <p>{data.length - (data.split(' ').length -1)} characters count without spaces</p>
+                    <p>{data.split(/[ ]+/).join(" ").trim().length} characters count without extra spaces</p>
                     <p>{0.016 * data.split(' ').filter((element)=>{return element.length!==0}).length} minutes read</p>
                     <h2>Preview</h2>
                     <p>{data.split(' ').filter((element)=>{return element.length!==0}).length>0 ? data : 'Enter text in above text area to preview'}</p>
