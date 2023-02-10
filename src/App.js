@@ -61,8 +61,10 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Navbar title="TextUtils" switchDarkMode={switchDarkMode} mode={mode} filter={filter} />
+    <div style={{height: '100px'}}>
+    <Navbar title="TextUtils" alert={alert} switchDarkMode={switchDarkMode} mode={mode} filter={filter} />
       <Alert alert={alert} />
+      </div>
       <Routes>
       <Route path="/" element={<Workspace textarea={textarea} showAlert={showAlert} />} />
       <Route path="/about" element={<About acordianBody={textarea} />} />
