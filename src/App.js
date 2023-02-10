@@ -52,7 +52,7 @@ function App() {
   }
   const invertStyle = () => {
     if (mode === 'light') {
-      setFilter('filter')
+      setFilter('filter') 
     }
     else {
       setFilter('nofilter')
@@ -61,7 +61,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div style={{height: '100px'}}>
+    <div style={{height: '100px'}} className="sticky-top">
     <Navbar title="TextUtils" alert={alert} switchDarkMode={switchDarkMode} mode={mode} filter={filter} />
       <Alert alert={alert} />
       </div>
