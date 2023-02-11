@@ -5,7 +5,7 @@ export default function About(props) {
                 <div className="accordion accordion-flush m-3" id="accordionFlushExample">
                     <div className="accordion-item">
                         <h2 className={`accordion-header ${props.acordianBody}`} id="flush-headingOne">
-                            <button className={`accordion-button collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <button className={`${props.mode==='light' ? 'accordion-button' : 'accordion-button accordion-button-dark'} collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                 Analyze your text
                             </button>
                         </h2>
@@ -15,7 +15,7 @@ export default function About(props) {
                     </div>
                     <div className="accordion-item">
                         <h2 className={`accordion-header ${props.acordianBody}`} id="flush-headingTwo">
-                            <button className={`accordion-button collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <button className={`${props.mode==='light' ? 'accordion-button' : 'accordion-button accordion-button-dark'} collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                 Free to use
                             </button>
                         </h2>
@@ -27,7 +27,7 @@ export default function About(props) {
                     </div>
                     <div className="accordion-item">
                         <h2 className={`accordion-header ${props.acordianBody}`} id="flush-headingThree">
-                            <button className={`accordion-button collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <button className={`${props.mode==='light' ? 'accordion-button' : 'accordion-button accordion-button-dark'} collapsed ${props.acordianBody}`} type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                                 Browser Compatible
                             </button>
                         </h2>

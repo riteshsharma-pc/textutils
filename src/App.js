@@ -67,7 +67,7 @@ function App() {
       </div>
       <Routes>
       <Route path="/" element={<Workspace textarea={textarea} showAlert={showAlert} />} />
-      <Route path="/about" element={<About acordianBody={textarea} />} />
+      <Route path="/about" element={<About acordianBody={textarea} mode={mode} />} />
       </Routes>
     </BrowserRouter>
     </>
