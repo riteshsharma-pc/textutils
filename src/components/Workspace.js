@@ -37,16 +37,16 @@ export default function Workspace(props) {
                 <div className="form py-3">
                     <label htmlFor="dataofuser" className="my-1">Enter Your Data Here</label>
                     <textarea className={`form-control my-3 ${props.textarea}`} id="databox" value={data} onChange={handleChange} placeholder="Enter Text here" rows="8"></textarea>
-                    <button disabled={data.split(' ').filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={uppercaseFunc}>Change to Uppercase</button>
-                    <button disabled={data.split(' ').filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={lowercaseFunc}>Change to Lowercase</button>
+                    <button disabled={data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={uppercaseFunc}>Change to Uppercase</button>
+                    <button disabled={data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={lowercaseFunc}>Change to Lowercase</button>
                     <button disabled={data.length===0} className="btn btn-primary m-1" onClick={clearTextFunc}>Clear Text</button>
-                    <button disabled={data.split(' ').filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={copyText}>Copy Text</button>
-                    <button disabled={data.split(' ').filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
-                    <button disabled={data.split(' ').filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={removeFrontBackSpaces}>Remove Starting and Ending Extra Spaces</button>
+                    <button disabled={data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={copyText}>Copy Text</button>
+                    <button disabled={data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+                    <button disabled={data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length===0} className="btn btn-primary m-1" onClick={removeFrontBackSpaces}>Remove Starting and Ending Extra Spaces</button>
                 </div>
                 <div>
                     <h1>Text Summary</h1>
-                    <p>{data.split(' ').filter((element)=>{return element.length!==0}).length} words</p>
+                    <p>{data.split(/[\s+]/).filter((element)=>{return element.length!==0}).length} words</p>
                     <p>{data.length} characters {"(including spaces)"}</p>
                     <p>{data.split(' ').length-1} white spaces</p>
                     <p>{data.length - (data.split(' ').length -1)} characters count without spaces</p>
