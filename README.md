@@ -1,4 +1,4 @@
-[Click to show Preview:  TextUtils](textutils-newbie.netlify.app)
+[Click to show Preview:  TextUtils](https://textutils-newbie.netlify.app/)
 
 
 # Getting Started with Create React App
